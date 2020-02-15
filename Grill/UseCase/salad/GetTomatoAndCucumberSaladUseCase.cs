@@ -1,11 +1,11 @@
 class GetTomatoAndCucumberSaladUseCase: UseCase<TomatoAndCucumberSalad> {
 
-    GetTomatoAndCucumberSaladUseCase(TomatoAndCucumberSaladRepository Repository) : base(Repository)
+    public GetTomatoAndCucumberSaladUseCase(TomatoAndCucumberSaladRepository Repository) : base(Repository)
     {
     
     }
 
-    override public void run() {
-        Repository.GetProduct();
+    override public void Run() {
+        while(Repository.GetProduct() != null);
     }
 }

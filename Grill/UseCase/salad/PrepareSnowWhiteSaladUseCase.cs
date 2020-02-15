@@ -7,7 +7,7 @@ class PrepareSnowWhiteSaladUseCase: UseCase<SnowWhiteSalad> {
     
     }
 
-    override public void run() {
+    override public void Run() {
         SnowWhiteSalad product = new SnowWhiteSalad();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

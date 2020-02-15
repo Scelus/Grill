@@ -1,10 +1,10 @@
 class GetCarrotAndCabbageSaladUseCase: UseCase<CarrotAndCabbageSalad> {
 
-    GetCarrotAndCabbageSaladUseCase(CarrotAndCabbageSaladRepository Repository) : base(Repository){
+    public GetCarrotAndCabbageSaladUseCase(CarrotAndCabbageSaladRepository Repository) : base(Repository){
     
     }
 
-    override public void run() {
-        Repository.GetProduct();
+    override public void Run() {
+        while(Repository.GetProduct() != null);
     }
 }

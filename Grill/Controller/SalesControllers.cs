@@ -11,7 +11,6 @@ class SalesControllers : Controller
     static WhiteBreadRepository WhiteBreadRepository;
     static WholeGrainBreadRepository WholeGrainBreadRepository;
 
-
     static RussianSaladRepository RussianSaladRepository;
     static SnowWhiteSaladRepository SnowWhiteSaladRepository;
     static TomatoAndCucumberSaladRepository TomatoAndCucumberSaladRepository;
@@ -40,30 +39,30 @@ class SalesControllers : Controller
 
     private static void TakeOrders(MeatloafRepository meatloafRepository, SteakRepository steakRepository, BurgerRepository burgerRepository, WhiteBreadRepository whiteBreadRepository, WholeGrainBreadRepository wholeGrainBreadRepository, RussianSaladRepository russianSaladRepository, SnowWhiteSaladRepository snowWhiteSaladRepository, TomatoAndCucumberSaladRepository tomatoAndCucumberSaladRepository, CarrotAndCabbageSaladRepository carrotAndCabbageSaladRepository)
     {
-        while(true)
+        while (true)
         {
-            try
+            if (orders.Count > 0)
             {
                 Order order = orders.Dequeue();
 
-                switch(order.MeatOrder) 
+                switch (order.MeatOrder)
                 {
-                    case 1: 
+                    case 1:
                         {
                             GetMeatloafUseCase useCase = new GetMeatloafUseCase(meatloafRepository);
-                            useCase.run();
+                            useCase.Run();
                             break;
                         }
                     case 2:
                         {
                             GetSteakUseCase useCase = new GetSteakUseCase(steakRepository);
-                            useCase.run();
+                            useCase.Run();
                             break;
                         }
                     case 3:
                         {
                             GetBurgerUseCase useCase = new GetBurgerUseCase(burgerRepository);
-                            useCase.run();
+                            useCase.Run();
                             break;
                         }
                 }
@@ -73,19 +72,46 @@ class SalesControllers : Controller
                     case 1:
                         {
                             GetWhiteBreadUseCase useCase = new GetWhiteBreadUseCase(whiteBreadRepository);
-                            useCase.run();
+                            useCase.Run();
                             break;
                         }
                     case 2:
                         {
                             GetWholeGrainBreadUseCase useCase = new GetWholeGrainBreadUseCase(wholeGrainBreadRepository);
-                            useCase.run();
+                            useCase.Run();
                             break;
                         }
                 }
-            }
-            catch (Exception e) 
-            { 
+
+                switch (order.SaladOrder)
+                {
+                    case 1:
+                        {
+                            GetRussianSaladUseCase useCase = new GetRussianSaladUseCase(russianSaladRepository);
+                            useCase.Run();
+                            break;
+                        }
+                    case 2:
+                        {
+                            GetSnowWhiteSaladUseCase useCase = new GetSnowWhiteSaladUseCase(snowWhiteSaladRepository);
+                            useCase.Run();
+                            break;
+                        }
+                    case 3:
+                        {
+                            GetTomatoAndCucumberSaladUseCase useCase = new GetTomatoAndCucumberSaladUseCase(tomatoAndCucumberSaladRepository);
+                            useCase.Run();
+                            break;
+                        }
+                    case 4:
+                        {
+                            GetCarrotAndCabbageSaladUseCase useCase = new GetCarrotAndCabbageSaladUseCase(carrotAndCabbageSaladRepository);
+                            useCase.Run();
+                            break;
+                        }
+                }
+
+                Console.WriteLine("Order taken");
             }
         }
     }

@@ -7,7 +7,7 @@ class PrepareWhiteBreadUseCase: UseCase<WhiteBread> {
         
     }
 
-    override public void run() {
+    override public void Run() {
         WhiteBread prodcut = new WhiteBread();
         Repository.AddProduct(prodcut);
         Thread.Sleep(prodcut.TimeToPrepare * 1000);

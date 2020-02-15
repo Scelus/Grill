@@ -5,5 +5,5 @@ abstract class UseCase<T> where T: Product {
         this.Repository = Repository;
     }
 
-    abstract public void run();
+    abstract public void Run();
 }

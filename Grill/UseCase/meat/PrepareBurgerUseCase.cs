@@ -7,7 +7,7 @@ class PrepareBurgerUseCase: UseCase<Burger> {
         
     } 
 
-    override public void run() {
+    override public void Run() {
         Burger product = new Burger();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

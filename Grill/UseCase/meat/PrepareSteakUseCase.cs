@@ -7,7 +7,7 @@ class PrepareSteakUseCase: UseCase<Steak> {
     
     }
 
-    override public void run() {
+    override public void Run() {
         Steak product = new Steak();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

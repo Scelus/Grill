@@ -1,10 +1,10 @@
 class GetSnowWhiteSaladUseCase: UseCase<SnowWhiteSalad> {
 
-    GetSnowWhiteSaladUseCase(SnowWhiteSaladRepository Repository) : base(Repository){
+    public GetSnowWhiteSaladUseCase(SnowWhiteSaladRepository Repository) : base(Repository){
     
     }
 
-    override public void run() {
-        Repository.GetProduct();
+    override public void Run() {
+        while(Repository.GetProduct() != null);
     }
 }

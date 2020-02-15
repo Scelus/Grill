@@ -8,7 +8,7 @@ class PrepareTomatoAndCucumberSaladUseCase: UseCase<TomatoAndCucumberSalad> {
     
     }
 
-    override public void run() {
+    override public void Run() {
         TomatoAndCucumberSalad product = new TomatoAndCucumberSalad();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

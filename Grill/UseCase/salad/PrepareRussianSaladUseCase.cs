@@ -7,7 +7,7 @@ class PrepareRussianSaladUseCase: UseCase<RussianSalad> {
     
     }
 
-    override public void run() {
+    override public void Run() {
         RussianSalad product = new RussianSalad();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

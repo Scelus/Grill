@@ -4,7 +4,7 @@ class GetWholeGrainBreadUseCase: UseCase<WholeGrainBread> {
         
     }
 
-    override public void run() {
+    override public void Run() {
         while(Repository.GetProduct() != null);
     }
 }

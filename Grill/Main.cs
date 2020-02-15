@@ -47,6 +47,8 @@ class Grill
         seller.start();
 
         seller.PlaceOrder(new Order(1, 1, 1));
+        seller.PlaceOrder(new Order(2, 1, 1));
+        seller.PlaceOrder(new Order(1, 2, 1));
 
         DateTime StartTime = DateTime.Now;
         while (true) {

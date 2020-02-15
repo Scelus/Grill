@@ -8,7 +8,7 @@ class PrepareMeatloafUseCase: UseCase<Meatloaf> {
         
     }
 
-    override public void run() {
+    override public void Run() {
         Meatloaf product = new Meatloaf();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);

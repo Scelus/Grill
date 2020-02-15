@@ -5,7 +5,7 @@ abstract class Repository<T> where T : Product {
 
     abstract public int MaxProductQuantity { get; }
 
-    private Queue<T> datasource = new Queue<T>();
+    private readonly Queue<T> datasource = new Queue<T>();
 
     public bool AddProduct(T product) {
         if (datasource.Count < MaxProductQuantity) {
@@ -19,7 +19,7 @@ abstract class Repository<T> where T : Product {
      public T GetProduct() {
          if (datasource.Count > 0) {
             T product = datasource.Dequeue();
-            Console.WriteLine("Got " + product.GetType().ToString());
+            Console.WriteLine("Got " + product.ToString());
             return product;
          }
          else {

@@ -4,7 +4,7 @@ class GetBurgerUseCase: UseCase<Burger> {
         
     }
 
-    override public void run() {
+    override public void Run() {
         while (Repository.GetProduct() != null);
     }
 }

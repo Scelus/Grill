@@ -64,17 +64,17 @@ class KitchenController: Controller {
             switch(rnd.Next(1, 3)) {
                 case 1: {
                     PrepareMeatloafUseCase useCase = new PrepareMeatloafUseCase(mr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 2: {
                     PrepareBurgerUseCase useCase = new PrepareBurgerUseCase(br);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 3: {
                     PrepareSteakUseCase useCase = new PrepareSteakUseCase(sr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
             }
@@ -89,12 +89,12 @@ class KitchenController: Controller {
             switch(rnd.Next(1, 2)) {
                 case 1: {
                     PrepareWhiteBreadUseCase useCase = new PrepareWhiteBreadUseCase(wbr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 2: {
                     PrepareWholeGrainBreadUseCase useCase = new PrepareWholeGrainBreadUseCase(wgr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
             }
@@ -110,22 +110,22 @@ class KitchenController: Controller {
             switch(rnd.Next(1, 4)) {
                 case 1: {
                     PrepareRussianSaladUseCase useCase = new PrepareRussianSaladUseCase(rsr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 2: {
                     PrepareSnowWhiteSaladUseCase useCase = new PrepareSnowWhiteSaladUseCase(swr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 3: {
                     PrepareTomatoAndCucumberSaladUseCase useCase = new PrepareTomatoAndCucumberSaladUseCase(tcsr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
                 case 4: {
                     PrepareCarrotAndCabbageSaladUseCase useCase = new PrepareCarrotAndCabbageSaladUseCase(ccr);
-                    useCase.run();
+                    useCase.Run();
                     break;
                 }
             }

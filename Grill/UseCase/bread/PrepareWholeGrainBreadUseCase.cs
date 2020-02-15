@@ -7,7 +7,7 @@ class PrepareWholeGrainBreadUseCase: UseCase<WholeGrainBread> {
         
     }
 
-    override public void run() {
+    override public void Run() {
         WholeGrainBread product = new WholeGrainBread();
         Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);
