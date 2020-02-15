@@ -1,15 +1,16 @@
 using System;
 using System.Threading;
 
-class PrepareSteakUseCase: UseCase<Steak> {
+class PrepareSteakUseCase: UseCase<Steak, object> {
 
     public PrepareSteakUseCase(SteakRepository Repository) : base(Repository){
     
     }
 
-    override public void Run() {
+    override public object Run() {
         Steak product = new Steak();
-        Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);
+        Repository.AddProduct(product);
+        return product;
     }
 }

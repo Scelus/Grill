@@ -1,15 +1,16 @@
 using System;
 using System.Threading;
 
-class PrepareBurgerUseCase: UseCase<Burger> {
+class PrepareBurgerUseCase: UseCase<Burger, object> {
 
     public PrepareBurgerUseCase (BurgerRepository Repository) : base(Repository) {
         
     } 
 
-    override public void Run() {
+    override public object Run() {
         Burger product = new Burger();
-        Repository.AddProduct(product);
         Thread.Sleep(product.TimeToPrepare * 1000);
+        Repository.AddProduct(product);
+        return product;
     }
 }

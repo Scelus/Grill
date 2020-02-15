@@ -1,12 +1,17 @@
 using System.Threading;
 
-class GetSteakUseCase: UseCase<Steak> {
+class GetSteakUseCase: UseCase<Steak, Steak> {
 
-    public GetSteakUseCase(SteakRepository Repository) : base(Repository){
+    public GetSteakUseCase(SteakRepository Repository) : base(Repository) {
     
     }
 
-    override public void Run() {
-        while (Repository.GetProduct() != null);
+    override public Steak Run() {
+        Steak steak;
+        do
+        {
+            steak = Repository.GetProduct();
+        } while (steak == null);
+        return steak;
     }
 }

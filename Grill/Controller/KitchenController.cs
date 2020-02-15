@@ -51,9 +51,16 @@ class KitchenController: Controller {
 
 
     override public void stop() {
-        meatChef.Abort();
-        breadChef.Abort();
-        saladChef.Abort();
+        try
+        {
+            meatChef.Abort();
+            breadChef.Abort();
+            saladChef.Abort();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     static void CookMeat (MeatloafRepository mr, SteakRepository sr, BurgerRepository br) {
@@ -61,7 +68,7 @@ class KitchenController: Controller {
         Random rnd = new Random();
 
         while (true) {
-            switch(rnd.Next(1, 3)) {
+            switch(rnd.Next(1, 4)) {
                 case 1: {
                     PrepareMeatloafUseCase useCase = new PrepareMeatloafUseCase(mr);
                     useCase.Run();
@@ -86,7 +93,7 @@ class KitchenController: Controller {
         Random rnd = new Random();
 
         while (true) {
-            switch(rnd.Next(1, 2)) {
+            switch(rnd.Next(1, 3)) {
                 case 1: {
                     PrepareWhiteBreadUseCase useCase = new PrepareWhiteBreadUseCase(wbr);
                     useCase.Run();
@@ -107,7 +114,7 @@ class KitchenController: Controller {
         Random rnd = new Random();
 
         while (true) {
-            switch(rnd.Next(1, 4)) {
+            switch(rnd.Next(1, 5)) {
                 case 1: {
                     PrepareRussianSaladUseCase useCase = new PrepareRussianSaladUseCase(rsr);
                     useCase.Run();

@@ -1,15 +1,16 @@
 using System;
 using System.Threading;
 
-class PrepareWhiteBreadUseCase: UseCase<WhiteBread> {
+class PrepareWhiteBreadUseCase: UseCase<WhiteBread, object> {
 
     public PrepareWhiteBreadUseCase(WhiteBreadRepository Repository) : base(Repository) {
         
     }
 
-    override public void Run() {
+    override public object Run() {
         WhiteBread prodcut = new WhiteBread();
-        Repository.AddProduct(prodcut);
         Thread.Sleep(prodcut.TimeToPrepare * 1000);
+        Repository.AddProduct(prodcut);
+        return prodcut;
     }
 }

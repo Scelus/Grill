@@ -1,15 +1,17 @@
 using System.Threading;
 
-class GetMeatloafUseCase: UseCase<Meatloaf> {
+class GetMeatloafUseCase: UseCase<Meatloaf, Meatloaf> {
 
     public GetMeatloafUseCase(MeatloafRepository Repository) : base(Repository){
         
     }
 
-    override public void Run() {
-        while (Repository.GetProduct() != null)
+    override public Meatloaf Run() {
+        Meatloaf meatloaf;
+        do
         {
-            Thread.Sleep(10);
-        }
+            meatloaf = Repository.GetProduct();
+        } while (meatloaf == null);
+        return meatloaf;
     }
 }

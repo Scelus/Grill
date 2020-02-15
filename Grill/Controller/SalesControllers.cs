@@ -25,7 +25,14 @@ class SalesControllers : Controller
 
     public override void stop()
     {
-        seller.Abort();
+        try
+        {
+            seller.Abort();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     public void PlaceOrder(Order order)
@@ -44,74 +51,79 @@ class SalesControllers : Controller
             if (orders.Count > 0)
             {
                 Order order = orders.Dequeue();
-
+                Product meat = null;
                 switch (order.MeatOrder)
                 {
                     case 1:
                         {
                             GetMeatloafUseCase useCase = new GetMeatloafUseCase(meatloafRepository);
-                            useCase.Run();
+                            meat = useCase.Run();
                             break;
                         }
                     case 2:
                         {
                             GetSteakUseCase useCase = new GetSteakUseCase(steakRepository);
-                            useCase.Run();
+                            meat = useCase.Run();
                             break;
                         }
                     case 3:
                         {
                             GetBurgerUseCase useCase = new GetBurgerUseCase(burgerRepository);
-                            useCase.Run();
+                            meat = useCase.Run();
                             break;
                         }
                 }
 
+                Product bread = null;
                 switch (order.BreadOrder)
                 {
                     case 1:
                         {
                             GetWhiteBreadUseCase useCase = new GetWhiteBreadUseCase(whiteBreadRepository);
-                            useCase.Run();
+                            bread = useCase.Run();
                             break;
                         }
                     case 2:
                         {
                             GetWholeGrainBreadUseCase useCase = new GetWholeGrainBreadUseCase(wholeGrainBreadRepository);
-                            useCase.Run();
+                            bread = useCase.Run();
                             break;
                         }
                 }
 
+                Product salad = null;
                 switch (order.SaladOrder)
                 {
                     case 1:
                         {
                             GetRussianSaladUseCase useCase = new GetRussianSaladUseCase(russianSaladRepository);
-                            useCase.Run();
+                            salad = useCase.Run()[0];
                             break;
                         }
                     case 2:
                         {
                             GetSnowWhiteSaladUseCase useCase = new GetSnowWhiteSaladUseCase(snowWhiteSaladRepository);
-                            useCase.Run();
+                            salad = useCase.Run()[0];
                             break;
                         }
                     case 3:
                         {
                             GetTomatoAndCucumberSaladUseCase useCase = new GetTomatoAndCucumberSaladUseCase(tomatoAndCucumberSaladRepository);
-                            useCase.Run();
+                            salad = useCase.Run()[0];
                             break;
                         }
                     case 4:
                         {
                             GetCarrotAndCabbageSaladUseCase useCase = new GetCarrotAndCabbageSaladUseCase(carrotAndCabbageSaladRepository);
-                            useCase.Run();
+                            salad = useCase.Run()[0];
                             break;
                         }
                 }
+                double sum = meat.Price + bread.Price + salad.Price;
 
-                Console.WriteLine("Order taken");
+                Console.WriteLine("Order taken " + meat.GetType() + ", " + bread.GetType() + ", " + salad.GetType());
+                Console.WriteLine("Total sum: " + sum.ToString());
+                Console.WriteLine();
             }
         }
     }

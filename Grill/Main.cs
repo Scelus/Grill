@@ -3,19 +3,18 @@ using System.Timers;
 
 class Grill
 {
-    static MeatloafRepository MeatloafRepository = new MeatloafRepository();
-    static SteakRepository SteakRepository = new SteakRepository();
-    static BurgerRepository BurgerRepository = new BurgerRepository();
+    static readonly MeatloafRepository MeatloafRepository = new MeatloafRepository();
+    static readonly SteakRepository SteakRepository = new SteakRepository();
+    static readonly BurgerRepository BurgerRepository = new BurgerRepository();
 
 
-    static WhiteBreadRepository WhiteBreadRepository = new WhiteBreadRepository();
-    static WholeGrainBreadRepository WholeGrainBreadRepository = new WholeGrainBreadRepository();
+    static readonly WhiteBreadRepository WhiteBreadRepository = new WhiteBreadRepository();
+    static readonly WholeGrainBreadRepository WholeGrainBreadRepository = new WholeGrainBreadRepository();
 
-
-    static RussianSaladRepository RussianSaladRepository = new RussianSaladRepository();
-    static SnowWhiteSaladRepository SnowWhiteSaladRepository = new SnowWhiteSaladRepository();
-    static TomatoAndCucumberSaladRepository TomatoAndCucumberSaladRepository = new TomatoAndCucumberSaladRepository();
-    static CarrotAndCabbageSaladRepository CarrotAndCabbageSaladRepository = new CarrotAndCabbageSaladRepository();
+    static readonly RussianSaladRepository RussianSaladRepository = new RussianSaladRepository();
+    static readonly SnowWhiteSaladRepository SnowWhiteSaladRepository = new SnowWhiteSaladRepository();
+    static readonly TomatoAndCucumberSaladRepository TomatoAndCucumberSaladRepository = new TomatoAndCucumberSaladRepository();
+    static readonly CarrotAndCabbageSaladRepository CarrotAndCabbageSaladRepository = new CarrotAndCabbageSaladRepository();
 
     public static int Main () {
 
@@ -47,13 +46,14 @@ class Grill
         seller.start();
 
         seller.PlaceOrder(new Order(1, 1, 1));
-        seller.PlaceOrder(new Order(2, 1, 1));
+        seller.PlaceOrder(new Order(1, 1, 1));
         seller.PlaceOrder(new Order(1, 2, 1));
+        seller.PlaceOrder(new Order(1, 2, 3));
 
         DateTime StartTime = DateTime.Now;
         while (true) {
             Double elapsedMillis = ((TimeSpan) (DateTime.Now - StartTime)).TotalMilliseconds;
-            if (elapsedMillis > 1 * 60 * 1000) {
+            if (elapsedMillis > 5 * 60 * 1000) {
                 break;
             }
         }

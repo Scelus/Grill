@@ -1,10 +1,15 @@
-class GetWholeGrainBreadUseCase: UseCase<WholeGrainBread> {
+class GetWholeGrainBreadUseCase: UseCase<WholeGrainBread, WholeGrainBread> {
 
     public GetWholeGrainBreadUseCase(WholeGrainBreadRepository Repository) : base(Repository) {
         
     }
 
-    override public void Run() {
-        while(Repository.GetProduct() != null);
+    override public WholeGrainBread Run() {
+        WholeGrainBread wholeGrainBread;
+        do
+        {
+            wholeGrainBread = Repository.GetProduct();
+        } while (wholeGrainBread == null);
+        return wholeGrainBread;
     }
 }
