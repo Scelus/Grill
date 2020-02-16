@@ -31,7 +31,7 @@ class SalesControllers : Controller
         }
         catch (Exception e)
         {
-
+            Console.WriteLine(e.Message);
         }
     }
 
@@ -55,13 +55,13 @@ class SalesControllers : Controller
                 Product bread = null;
                 switch (order.BreadOrder)
                 {
-                    case 1:
+                    case Order.Bread.WhiteBread:
                         {
                             GetWhiteBreadUseCase useCase = new GetWhiteBreadUseCase(whiteBreadRepository);
                             bread = useCase.Run();
                             break;
                         }
-                    case 2:
+                    case Order.Bread.WholeGrainBread:
                         {
                             GetWholeGrainBreadUseCase useCase = new GetWholeGrainBreadUseCase(wholeGrainBreadRepository);
                             bread = useCase.Run();
@@ -72,19 +72,19 @@ class SalesControllers : Controller
                 Product meat = null;
                 switch (order.MeatOrder)
                 {
-                    case 1:
+                    case Order.Meat.Meatloaf:
                         {
                             GetMeatloafUseCase useCase = new GetMeatloafUseCase(meatloafRepository);
                             meat = useCase.Run();
                             break;
                         }
-                    case 2:
+                    case Order.Meat.Steak:
                         {
                             GetSteakUseCase useCase = new GetSteakUseCase(steakRepository);
                             meat = useCase.Run();
                             break;
                         }
-                    case 3:
+                    case Order.Meat.Burger:
                         {
                             GetBurgerUseCase useCase = new GetBurgerUseCase(burgerRepository);
                             meat = useCase.Run();
@@ -95,25 +95,25 @@ class SalesControllers : Controller
                 Product salad = null;
                 switch (order.SaladOrder)
                 {
-                    case 1:
+                    case Order.Salad.RussianSalad:
                         {
                             GetRussianSaladUseCase useCase = new GetRussianSaladUseCase(russianSaladRepository);
                             salad = useCase.Run()[0];
                             break;
                         }
-                    case 2:
+                    case Order.Salad.SnowWhiteSalad:
                         {
                             GetSnowWhiteSaladUseCase useCase = new GetSnowWhiteSaladUseCase(snowWhiteSaladRepository);
                             salad = useCase.Run()[0];
                             break;
                         }
-                    case 3:
+                    case Order.Salad.TomatoesAndCucumberSalad:
                         {
                             GetTomatoAndCucumberSaladUseCase useCase = new GetTomatoAndCucumberSaladUseCase(tomatoAndCucumberSaladRepository);
                             salad = useCase.Run()[0];
                             break;
                         }
-                    case 4:
+                    case Order.Salad.CarrortsAndCabbageSalad:
                         {
                             GetCarrotAndCabbageSaladUseCase useCase = new GetCarrotAndCabbageSaladUseCase(carrotAndCabbageSaladRepository);
                             salad = useCase.Run()[0];

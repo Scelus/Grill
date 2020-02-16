@@ -5,11 +5,15 @@ using System.Text;
 
 class Order
 {
-    public int MeatOrder;
-    public int BreadOrder;
-    public int SaladOrder;
+    public Meat MeatOrder;
+    public Bread BreadOrder;
+    public Salad SaladOrder;
 
-    public Order(int meat, int bread, int salad)
+    public enum Meat { Meatloaf, Steak, Burger };
+    public enum Bread { WhiteBread, WholeGrainBread };
+    public enum Salad { RussianSalad, SnowWhiteSalad, TomatoesAndCucumberSalad, CarrortsAndCabbageSalad }
+
+    public Order(Meat meat, Bread bread, Salad salad)
     {
         this.MeatOrder = meat;
         this.BreadOrder = bread;

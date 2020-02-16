@@ -16,9 +16,11 @@ class WriteOrderLogUseCase : UseCase<Boolean>
     {
         double sum = Order.Meat.Price + Order.Bread.Price + Order.Salad.Price;
 
+        Console.WriteLine("-------------------------");
         Console.WriteLine("Order taken " + Order.Meat.GetType() + ", " + Order.Bread.GetType() + ", " + Order.Salad.GetType());
         Console.WriteLine("Total sum: " + sum.ToString());
         Console.WriteLine("Ttime: " + DateTime.Now.ToString());
+        Console.WriteLine("-------------------------");
         Console.WriteLine();
 
         return true;

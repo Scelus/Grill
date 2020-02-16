@@ -10,6 +10,7 @@ abstract class Repository<T> where T : Product {
     public bool AddProduct(T product) {
         if (datasource.Count < MaxProductQuantity) {
             datasource.Enqueue(product);
+            Console.WriteLine("Prepared " + product.ToString());
             return true;     
         }
 

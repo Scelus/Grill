@@ -44,10 +44,13 @@ class Grill
         kitchen.start();
         seller.start();
 
-        seller.PlaceOrder(new Order(1, 1, 1));
-        seller.PlaceOrder(new Order(2, 1, 1));
-        seller.PlaceOrder(new Order(1, 2, 4));
-        seller.PlaceOrder(new Order(1, 2, 3));
+        seller.PlaceOrder(new Order(Order.Meat.Burger, Order.Bread.WhiteBread, Order.Salad.SnowWhiteSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Steak, Order.Bread.WhiteBread, Order.Salad.RussianSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Burger, Order.Bread.WholeGrainBread, Order.Salad.SnowWhiteSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Burger, Order.Bread.WholeGrainBread, Order.Salad.CarrortsAndCabbageSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Meatloaf, Order.Bread.WhiteBread, Order.Salad.RussianSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Steak, Order.Bread.WhiteBread, Order.Salad.TomatoesAndCucumberSalad));
+        seller.PlaceOrder(new Order(Order.Meat.Meatloaf, Order.Bread.WholeGrainBread, Order.Salad.CarrortsAndCabbageSalad));
 
         // Run the grill for 5min.
         DateTime StartTime = DateTime.Now;

@@ -49,7 +49,6 @@ class KitchenController: Controller {
         saladChef.Start();
     }
 
-
     override public void stop() {
         try
         {
@@ -59,7 +58,7 @@ class KitchenController: Controller {
         }
         catch (Exception e)
         {
-
+            Console.WriteLine(e.Message);
         }
     }
 
