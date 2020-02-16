@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-class PrepareMeatloafUseCase: UseCase<Meatloaf, object> {
+class PrepareMeatloafUseCase: ProductUseCase<Meatloaf, object> {
 
     public PrepareMeatloafUseCase(MeatloafRepository Repository) : base(Repository){
         

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class GetRussianSaladUseCase: UseCase<RussianSalad, List<RussianSalad>> {
+class GetRussianSaladUseCase: ProductUseCase<RussianSalad, List<RussianSalad>> {
 
     public GetRussianSaladUseCase(RussianSaladRepository Repository) : base(Repository){
     

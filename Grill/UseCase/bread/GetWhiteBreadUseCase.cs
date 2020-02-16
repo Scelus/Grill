@@ -1,4 +1,4 @@
-class GetWhiteBreadUseCase: UseCase<WhiteBread, WhiteBread> {
+class GetWhiteBreadUseCase: ProductUseCase<WhiteBread, WhiteBread> {
 
     public GetWhiteBreadUseCase(WhiteBreadRepository Repository) : base(Repository) { }
     

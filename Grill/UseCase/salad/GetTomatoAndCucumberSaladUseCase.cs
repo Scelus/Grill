@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class GetTomatoAndCucumberSaladUseCase: UseCase<TomatoAndCucumberSalad, List<TomatoAndCucumberSalad>> {
+class GetTomatoAndCucumberSaladUseCase: ProductUseCase<TomatoAndCucumberSalad, List<TomatoAndCucumberSalad>> {
 
     public GetTomatoAndCucumberSaladUseCase(TomatoAndCucumberSaladRepository Repository) : base(Repository)
     {

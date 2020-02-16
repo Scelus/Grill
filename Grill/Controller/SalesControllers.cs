@@ -51,6 +51,24 @@ class SalesControllers : Controller
             if (orders.Count > 0)
             {
                 Order order = orders.Dequeue();
+
+                Product bread = null;
+                switch (order.BreadOrder)
+                {
+                    case 1:
+                        {
+                            GetWhiteBreadUseCase useCase = new GetWhiteBreadUseCase(whiteBreadRepository);
+                            bread = useCase.Run();
+                            break;
+                        }
+                    case 2:
+                        {
+                            GetWholeGrainBreadUseCase useCase = new GetWholeGrainBreadUseCase(wholeGrainBreadRepository);
+                            bread = useCase.Run();
+                            break;
+                        }
+                }
+
                 Product meat = null;
                 switch (order.MeatOrder)
                 {
@@ -70,23 +88,6 @@ class SalesControllers : Controller
                         {
                             GetBurgerUseCase useCase = new GetBurgerUseCase(burgerRepository);
                             meat = useCase.Run();
-                            break;
-                        }
-                }
-
-                Product bread = null;
-                switch (order.BreadOrder)
-                {
-                    case 1:
-                        {
-                            GetWhiteBreadUseCase useCase = new GetWhiteBreadUseCase(whiteBreadRepository);
-                            bread = useCase.Run();
-                            break;
-                        }
-                    case 2:
-                        {
-                            GetWholeGrainBreadUseCase useCase = new GetWholeGrainBreadUseCase(wholeGrainBreadRepository);
-                            bread = useCase.Run();
                             break;
                         }
                 }
@@ -119,11 +120,10 @@ class SalesControllers : Controller
                             break;
                         }
                 }
-                double sum = meat.Price + bread.Price + salad.Price;
 
-                Console.WriteLine("Order taken " + meat.GetType() + ", " + bread.GetType() + ", " + salad.GetType());
-                Console.WriteLine("Total sum: " + sum.ToString());
-                Console.WriteLine();
+                CompletedOrder completedOrder = new CompletedOrder(meat, bread, salad);
+                WriteOrderLogUseCase writeOrderLogUse = new WriteOrderLogUseCase(completedOrder);
+                writeOrderLogUse.Run();
             }
         }
     }

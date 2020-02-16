@@ -1,6 +1,6 @@
 using System.Threading;
 
-class GetMeatloafUseCase: UseCase<Meatloaf, Meatloaf> {
+class GetMeatloafUseCase: ProductUseCase<Meatloaf, Meatloaf> {
 
     public GetMeatloafUseCase(MeatloafRepository Repository) : base(Repository){
         

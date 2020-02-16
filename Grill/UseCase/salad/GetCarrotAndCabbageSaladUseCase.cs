@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class GetCarrotAndCabbageSaladUseCase: UseCase<CarrotAndCabbageSalad, List<CarrotAndCabbageSalad>> {
+class GetCarrotAndCabbageSaladUseCase: ProductUseCase<CarrotAndCabbageSalad, List<CarrotAndCabbageSalad>> {
 
     public GetCarrotAndCabbageSaladUseCase(CarrotAndCabbageSaladRepository Repository) : base(Repository){
     

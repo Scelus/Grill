@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-class PrepareSteakUseCase: UseCase<Steak, object> {
+class PrepareSteakUseCase: ProductUseCase<Steak, object> {
 
     public PrepareSteakUseCase(SteakRepository Repository) : base(Repository){
     

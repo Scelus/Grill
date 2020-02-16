@@ -1,6 +1,6 @@
 using System.Threading;
 
-class GetSteakUseCase: UseCase<Steak, Steak> {
+class GetSteakUseCase: ProductUseCase<Steak, Steak> {
 
     public GetSteakUseCase(SteakRepository Repository) : base(Repository) {
     

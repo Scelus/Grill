@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-class PrepareWholeGrainBreadUseCase: UseCase<WholeGrainBread, object> {
+class PrepareWholeGrainBreadUseCase: ProductUseCase<WholeGrainBread, object> {
 
     public PrepareWholeGrainBreadUseCase(WholeGrainBreadRepository Repository) : base(Repository) {
         

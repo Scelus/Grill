@@ -1,4 +1,4 @@
-class GetWholeGrainBreadUseCase: UseCase<WholeGrainBread, WholeGrainBread> {
+class GetWholeGrainBreadUseCase: ProductUseCase<WholeGrainBread, WholeGrainBread> {
 
     public GetWholeGrainBreadUseCase(WholeGrainBreadRepository Repository) : base(Repository) {
         

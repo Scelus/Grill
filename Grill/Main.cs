@@ -7,7 +7,6 @@ class Grill
     static readonly SteakRepository SteakRepository = new SteakRepository();
     static readonly BurgerRepository BurgerRepository = new BurgerRepository();
 
-
     static readonly WhiteBreadRepository WhiteBreadRepository = new WhiteBreadRepository();
     static readonly WholeGrainBreadRepository WholeGrainBreadRepository = new WholeGrainBreadRepository();
 
@@ -46,10 +45,11 @@ class Grill
         seller.start();
 
         seller.PlaceOrder(new Order(1, 1, 1));
-        seller.PlaceOrder(new Order(1, 1, 1));
-        seller.PlaceOrder(new Order(1, 2, 1));
+        seller.PlaceOrder(new Order(2, 1, 1));
+        seller.PlaceOrder(new Order(1, 2, 4));
         seller.PlaceOrder(new Order(1, 2, 3));
 
+        // Run the grill for 5min.
         DateTime StartTime = DateTime.Now;
         while (true) {
             Double elapsedMillis = ((TimeSpan) (DateTime.Now - StartTime)).TotalMilliseconds;

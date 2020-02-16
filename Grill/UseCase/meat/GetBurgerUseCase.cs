@@ -1,4 +1,4 @@
-class GetBurgerUseCase: UseCase<Burger, Burger> {
+class GetBurgerUseCase: ProductUseCase<Burger, Burger> {
 
     public GetBurgerUseCase(BurgerRepository Repository) : base(Repository) {
         

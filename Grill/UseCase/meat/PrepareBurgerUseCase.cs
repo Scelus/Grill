@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-class PrepareBurgerUseCase: UseCase<Burger, object> {
+class PrepareBurgerUseCase: ProductUseCase<Burger, object> {
 
     public PrepareBurgerUseCase (BurgerRepository Repository) : base(Repository) {
         

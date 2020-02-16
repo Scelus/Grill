@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-class PrepareSnowWhiteSaladUseCase: UseCase<SnowWhiteSalad, object> {
+class PrepareSnowWhiteSaladUseCase: ProductUseCase<SnowWhiteSalad, object> {
 
     public PrepareSnowWhiteSaladUseCase(SnowWhiteSaladRepository Repository) : base(Repository){
     

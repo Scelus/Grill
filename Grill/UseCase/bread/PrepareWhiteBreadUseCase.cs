@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-class PrepareWhiteBreadUseCase: UseCase<WhiteBread, object> {
+class PrepareWhiteBreadUseCase: ProductUseCase<WhiteBread, object> {
 
     public PrepareWhiteBreadUseCase(WhiteBreadRepository Repository) : base(Repository) {
         

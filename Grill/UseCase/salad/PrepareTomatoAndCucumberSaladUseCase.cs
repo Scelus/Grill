@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-class PrepareTomatoAndCucumberSaladUseCase: UseCase<TomatoAndCucumberSalad, object> {
+class PrepareTomatoAndCucumberSaladUseCase: ProductUseCase<TomatoAndCucumberSalad, object> {
 
     public PrepareTomatoAndCucumberSaladUseCase(TomatoAndCucumberSaladRepository Repository) : base(Repository)
     {
